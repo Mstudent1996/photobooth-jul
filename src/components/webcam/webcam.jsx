@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useEffect } from "react";
+import { useRef, useCallback, useState, useEffect } from "react";
 import Webcam from "react-webcam";
 import style from "../webcam/webcam.module.css";
 import modal from "../webcam/modal.module.css";
