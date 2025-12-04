@@ -1,11 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3 {
-    font-family: "Berkshire Swash", serif;
+:root {
+  --dark-red: #901b22;
+  --light-red: #c70039;
+  --white: #fdffff;
+  --dark-green: #778b3b;
+  --light-green: #a3bf50;
+  --black: #000;
+  --fnt1: 52px;
+  --fnt2: 44px;
+  --fnt3: 32px;
+  --fnt4: 20px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--black);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Berkshire Swash", serif;
+}
+
+h1 {
+  font-size: var(--fnt1);
+  color: var(--white);
+}
+h1 {
+  font-size: var(--fnt2);
+  color: var(--white);
+}
+
+button {
+  border-radius: 50px;
+  font-size: var(--fnt4);
+  font-family: Berkshire Swash;
+  padding: 10px 0;
+  cursor: pointer; /* kan ændres til noget julet */
+  width: 300px;
 }
