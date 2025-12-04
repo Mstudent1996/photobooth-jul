@@ -1,0 +1,14 @@
+
+.filter {
+    background-color: rgba(128, 128, 128, 0.382);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 10px;
+
+
+    & img {
+        width: 80px;
+    }
+}
+

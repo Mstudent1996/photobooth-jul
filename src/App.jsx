@@ -1,11 +1,15 @@
+import "./App.css";
 import WebcamComponent from "./components/webcam/webcam";
-import styles from "./App.module.css";
-
+import FilterComponent from "./components/filter/filter";
 
 export default function App() {
   return (
-    <div className={styles.app}>
-      <WebcamComponent />
-    </div>
-  )
+    <>
+      <WebcamComponent>
+        {(setSelectedFilter) => (
+          <FilterComponent onSelectFilter={setSelectedFilter} />
+        )}
+      </WebcamComponent>
+    </>
+  );
 }
