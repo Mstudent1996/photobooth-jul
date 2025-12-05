@@ -1,17 +1,12 @@
-import WebcamComponent from "../../components/webcam/webcam";
-import FilterComponent from "../../components/filter/filter";
 import { Link } from "react-router-dom";
+import FrontpageComp from "../../components/frontpage/FrontpageComp";
 
 
 const Home = () => {
 
     return (
       <section>
-        <WebcamComponent>
-          {(setSelectedFilter) => (
-            <FilterComponent onSelectFilter={setSelectedFilter} />
-          )}
-        </WebcamComponent>
+        <FrontpageComp />
         
           <Link to="/gallery">Se nissernes billedbog</Link> <br />
           
