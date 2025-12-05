@@ -3,9 +3,16 @@ import WebcamComponent from "./components/webcam/webcam";
 import LoginModal from "./components/login/Login";
 import { useState } from "react";
 import FilterComponent from "./components/filter/filter";
-
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Gallery from "./pages/gallery/gallery";
 
 export default function App() {
+  <BrowserRouter>
+  <Routes>
+    <Route path="/login" element={<LoginModal />} />
+    <Route path="/gallery" element={<Gallery />} />
+  </Routes>
+  </BrowserRouter>
 
   const [showModal, setShowModal] = useState(false)
 
@@ -16,7 +23,7 @@ export default function App() {
           <FilterComponent onSelectFilter={setSelectedFilter} />
         )}
       </WebcamComponent>
-  
+
   <div>
     <button className="btn btn-primary" onClick={() => setShowModal(true)}>
       Open Login Modal
