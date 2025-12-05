@@ -1,5 +1,4 @@
 import "./App.css";
-import WebcamComponent from "./components/webcam/webcam";
 import LoginModal from "./components/login/Login";
 import { useState } from "react";
 import FilterComponent from "./components/filter/filter";
@@ -8,7 +7,6 @@ import Gallery from "./pages/gallery/gallery";
 import Home from "./pages/gallery/Home";
 
 export default function App() {
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <BrowserRouter>
