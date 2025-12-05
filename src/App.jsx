@@ -16,12 +16,12 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
 
-      <div>
+      {/* <div>
         <button className="btn btn-primary" onClick={() => setShowModal(true)}>
           Open Login Modal
         </button>
         <LoginModal show={showModal} onClose={() => setShowModal(false)} />
-      </div>
+      </div> */}
 
       <Link to="/gallery">Se nissernes billedbog</Link>
     </BrowserRouter>
