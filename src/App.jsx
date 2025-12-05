@@ -8,30 +8,28 @@ import Gallery from "./pages/gallery/gallery";
 import Home from "./pages/gallery/Home";
 
 export default function App() {
-  <BrowserRouter>
-  <Routes>
-    <Route path="/login" element={<LoginModal />} />
-    <Route path="/gallery" element={<Gallery />} />
-    <Route path="/home" element={<Home />} />
-  </Routes>
-  </BrowserRouter>
-
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginModal />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+
       <WebcamComponent>
         {(setSelectedFilter) => (
           <FilterComponent onSelectFilter={setSelectedFilter} />
         )}
       </WebcamComponent>
 
-  <div>
-    <button className="btn btn-primary" onClick={() => setShowModal(true)}>
-      Open Login Modal
-    </button>
-    <LoginModal show={showModal} onClose={() => setShowModal(false)} />
-  </div>;
-    </>
+      <div>
+        <button className="btn btn-primary" onClick={() => setShowModal(true)}>
+          Open Login Modal
+        </button>
+        <LoginModal show={showModal} onClose={() => setShowModal(false)} />
+      </div>
+    </BrowserRouter>
   );
 }
