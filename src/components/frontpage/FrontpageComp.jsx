@@ -1,0 +1,52 @@
+import { useState } from 'react';
+import FilterComponent from '../filter/filter';
+import LoginModal from '../login/Login';
+import WebcamComponent from '../webcam/webcam';
+import styles from './frontpageComp.module.css'
+
+const FrontpageComp = () => {
+
+    const [showModal, setShowModal] = useState(false);
+
+    return (
+      <section className={styles.container}>
+        <h1>Skab Julemagien</h1>
+
+        <div className={styles.content}>
+          <div className={styles.filters}>
+            <h3>Vælg din julemagi</h3>
+            <FilterComponent />
+          </div>
+
+          <div className={styles.camera}>
+            <WebcamComponent>
+              {(setSelectedFilter) => (
+                <FilterComponent onSelectFilter={setSelectedFilter} />
+              )}
+            </WebcamComponent>
+          </div>
+
+          <div className={styles.top3}>
+            <h3>Top 3</h3>
+            <div className={styles.imgTop}>Placeholder for top 1</div>
+            <div className={styles.imgTop}>Placeholder for top 2</div>
+            <div className={styles.imgTop}>Placeholder for top 3</div>
+          </div>
+        </div>
+
+        <div className={styles.btns}>
+          <button className={styles.btn}>Se nissernes billedbog</button>
+
+          <button 
+          className={styles.btn} 
+          onClick={() => setShowModal(true)}>
+            Til julemandensværkssted
+          </button>
+          <LoginModal show={showModal} onClose={() => setShowModal(false)} />
+
+        </div>
+      </section>
+    );
+}
+
+export default FrontpageComp

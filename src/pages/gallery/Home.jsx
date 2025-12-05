@@ -1,7 +1,10 @@
+import FrontpageComp from "../../components/frontpage/FrontpageComp"
+
+
 const Home = () => {
     return (
         <section>
-            <p>Alle components ligger her</p>
+            <FrontpageComp />
         </section>
     )
 }
