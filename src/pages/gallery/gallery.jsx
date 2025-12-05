@@ -1,3 +1,39 @@
-export default function Gallery() {
+import { useEffect, useState } from "react";
 
+export default function Gallery() {
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "https://photobooth-lx7n9.ondigitalocean.app/photos?includePending=true"
+        );
+        const data = await response.json();
+
+        setPhotos(data.data);
+      } catch (error) {
+        console.error("Fejl ved hentning af billeder:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Nissernes Billedbog</h1>
+
+      <div className="gallery">
+        {photos.map((photo) => (
+          <div key={photo._id}>
+            <img
+              src={photo.thumbUrl || photo.url}
+              alt={photo.originalFilename || "Billede fra nissernes billedbog"}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
