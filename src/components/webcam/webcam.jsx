@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState, useEffect } from "react";
+import { useRef, useCallback, useState } from "react";
 import Webcam from "react-webcam";
 import style from "../webcam/webcam.module.css";
 import modal from "../webcam/modal.module.css";
@@ -17,40 +17,51 @@ export default function WebcamComponent({ children }) {
     );
   };
 
-  const capture = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setCapturedImage(imageSrc);
-    setShowModal(true);
-  }, []);
-
   const closeModal = () => setShowModal(false);
 
-  useEffect(() => {
+  /* Vi bruger CTX fordi vi skal have vores filter tegnet ovenpå vores "canvas aka vores billed"  */
+  const capture = useCallback(async () => {
     const video = webcamRef.current?.video;
-    if (!video) return;
+    if (!video) {
+      const imageSrc = webcamRef.current?.getScreenshot();
+      setCapturedImage(imageSrc);
+      setShowModal(true);
+      return;
+    }
 
     const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth || 640;
+    canvas.height = video.videoHeight || 480;
     const ctx = canvas.getContext("2d");
 
-    // Bruger webcam og laver canvas så vi kan tegne filter oven på vores billed når det bliver taget
+    // SPEJL KUN VIDEOEN
+    ctx.save();
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
+
+    //  video spejlvendt
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    if (selectedFilter) {
-      const img = new Image();
-      img.src = selectedFilter;
-      img.crossOrigin = "anonymous";
-      img.onload = () => {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        setCapturedImage(canvas.toDataURL("image/jpeg"));
-      };
-    } else {
-      setTimeout(() => {
-        setCapturedImage(canvas.toDataURL("image/jpeg"));
-      }, 0);
+    ctx.restore();
 
+    if (selectedFilter) {
+      await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = selectedFilter;
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          resolve();
+        };
+        img.onerror = reject;
+      }).catch((err) => {
+        console.warn("Kunne ikke loade filter-billede:", err);
+      });
     }
+
+    const dataUrl = canvas.toDataURL("image/jpeg");
+    setCapturedImage(dataUrl);
+    setShowModal(true);
   }, [selectedFilter]);
 
   return (
@@ -76,9 +87,16 @@ export default function WebcamComponent({ children }) {
           <div className={modal.overlay} onClick={closeModal}>
             <div className={modal.content} onClick={(e) => e.stopPropagation()}>
               <img src={capturedImage} alt="Captured" className={modal.image} />
-              <button className={modal.closeButton} onClick={closeModal}>
-                <FontAwesomeIcon icon={faTrash} /> I kulsækken
-              </button>
+
+              <div className={modal.buttonRow}>
+                <button className={modal.closeButton} onClick={closeModal}>
+                  <FontAwesomeIcon icon={faTrash} /> I kulsækken
+                </button>
+
+                <button className={modal.closeButton} onClick={closeModal}>
+                  Til Nissernes billedbog
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -94,16 +112,6 @@ export default function WebcamComponent({ children }) {
 
       {children(handleFilterClick)}
 
-      {capturedImage && (
-        <div>
-          <h3>Dit billed:</h3>
-          <img
-            src={capturedImage}
-            alt="Captured"
-            style={{ maxWidth: "400px" }}
-          />
-        </div>
-      )}
     </div>
   );
 }
