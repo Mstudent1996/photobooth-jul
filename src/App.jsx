@@ -5,12 +5,14 @@ import { useState } from "react";
 import FilterComponent from "./components/filter/filter";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Gallery from "./pages/gallery/gallery";
+import Home from "./pages/gallery/Home";
 
 export default function App() {
   <BrowserRouter>
   <Routes>
     <Route path="/login" element={<LoginModal />} />
     <Route path="/gallery" element={<Gallery />} />
+    <Route path="/home" element={<Home />} />
   </Routes>
   </BrowserRouter>
 
