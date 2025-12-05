@@ -7,11 +7,9 @@ export default function Gallery() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://photobooth-lx7n9.ondigitalocean.app/photos"
+          "https://photobooth-lx7n9.ondigitalocean.app/photos?includePending=true"
         );
         const data = await response.json();
-
-        console.log("API RESPONSE:", data);
 
         setPhotos(data.data);
       } catch (error) {
@@ -28,12 +26,10 @@ export default function Gallery() {
 
       <div className="gallery">
         {photos.map((photo) => (
-          <div key={photo.id}>
+          <div key={photo._id}>
             <img
-              src={photo.imageUrl}
-              alt={
-                photo.title ? photo.title : "Billede fra nissernes billedbog"
-              }
+              src={photo.thumbUrl || photo.url}
+              alt={photo.originalFilename || "Billede fra nissernes billedbog"}
             />
           </div>
         ))}
