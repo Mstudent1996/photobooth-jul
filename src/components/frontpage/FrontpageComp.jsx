@@ -3,10 +3,12 @@ import FilterComponent from '../filter/filter';
 import LoginModal from '../login/Login';
 import WebcamComponent from '../webcam/webcam';
 import styles from './frontpageComp.module.css'
+import { Link } from 'react-router-dom';
 
 const FrontpageComp = () => {
 
     const [showModal, setShowModal] = useState(false);
+    const [selectedFilter, setSelectedFilter] = useState(null);
 
     return (
       <section className={styles.container}>
@@ -15,14 +17,14 @@ const FrontpageComp = () => {
         <div className={styles.content}>
           <div className={styles.filters}>
             <h3>Vælg din julemagi</h3>
-            <FilterComponent />
+            <FilterComponent
+              onSelectFilter={setSelectedFilter}
+              selectedFilter={selectedFilter}
+            />
           </div>
 
           <div className={styles.camera}>
-            <WebcamComponent>
-              {(setSelectedFilter) => (
-                <FilterComponent onSelectFilter={setSelectedFilter} />
-              )}
+            <WebcamComponent selectedFilter={selectedFilter}>
             </WebcamComponent>
           </div>
 
@@ -34,16 +36,15 @@ const FrontpageComp = () => {
           </div>
         </div>
 
-        <div className={styles.btns}>
-          <button className={styles.btn}>Se nissernes billedbog</button>
+        <div className={styles.buttons}>
+          <Link to="/gallery">
+            <button className={styles.button}>Se nissernes billedbog</button>
+          </Link>
 
-          <button 
-          className={styles.btn} 
-          onClick={() => setShowModal(true)}>
+          <button className={styles.button} onClick={() => setShowModal(true)}>
             Til julemandensværkssted
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
-
         </div>
       </section>
     );

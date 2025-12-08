@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import style from "../webcam/webcam.module.css";
 import modal from "../webcam/modal.module.css";
@@ -69,12 +69,11 @@ async function uploadToApi(imageBase64) {
   }
 }
 
-export default function WebcamComponent({ children }) {
+export default function WebcamComponent({ selectedFilter }) {
   const webcamRef = useRef(null);
   const [capturedImage, setCapturedImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(""); // toast
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleFilterClick = (filterSrc) => {
     setSelectedFilter((prevFilter) =>
@@ -155,7 +154,11 @@ export default function WebcamComponent({ children }) {
   };
 
   return (
-    <div>
+    <div className={style.layout}>
+      <div className={style.filtersContainer}>
+        {typeof children === "function" ? children(handleFilterClick) : null}
+      </div>
+
       <div className={style.container}>
         <div className={style.webcamWrapper}>
           <Webcam
@@ -201,8 +204,6 @@ export default function WebcamComponent({ children }) {
       </div>
 
       {successMessage && <div className={modal.toast}>{successMessage}</div>}
-
-      {children(handleFilterClick)}
     </div>
   );
 }
