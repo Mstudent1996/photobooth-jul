@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "./gallery.module.css";
+
 
 export default function Gallery() {
   const [photos, setPhotos] = useState([]);
@@ -26,7 +28,7 @@ export default function Gallery() {
 
       <div className="gallery">
         {photos.map((photo) => (
-          <div key={photo._id}>
+          <div key={photo._id} data-likes={photo.likes || 0}>
             <img
               src={photo.thumbUrl || photo.url}
               alt={photo.originalFilename || "Billede fra nissernes billedbog"}

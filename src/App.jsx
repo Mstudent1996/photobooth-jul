@@ -1,4 +1,3 @@
-import './App.css'
 import LoginModal from "./components/login/Login";
 import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
 import Gallery from "./pages/gallery/gallery";
