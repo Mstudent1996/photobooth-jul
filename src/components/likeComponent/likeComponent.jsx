@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Styles from "./likeComponent.module.css";
+import LikeHeart from "../../assets/grafisk/likeHeartIcon.svg";
+
 
 export default function Top3Slideshow() {
     const [slides, setSlides] = useState([]);
@@ -31,11 +33,16 @@ export default function Top3Slideshow() {
             <div className={Styles.slideWrap}>
                 {slides.map((s, i) => (
                     <div key={s.id ?? i} className={Styles.slideItem}>
-                        <img src={s.url} alt={s.originalFilename || "billede"} />
+                        
+                        <div className={Styles.imageWrapper}>
+                            <img src={s.url} className={Styles.slideImage} />
+                        </div>
+
                         <div className={Styles.likes}>
-                            <span>Likes: {s.likes || 0}</span>
+                            <img src={LikeHeart} /> {s.likes || 0}
                         </div>
                     </div>
+
                 ))}
             </div>
         </div>
