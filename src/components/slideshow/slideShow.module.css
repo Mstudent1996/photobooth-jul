@@ -3,9 +3,11 @@
 .slideshowContainer {
     background-color: #901b22;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-image: url(../../../public/assets/snowBackground_1440x1024.svg);
+    grid-template-columns: 1.5fr 1fr;
+    background-image: url(../../../src/assets/grafisk/snowBackground_1920x1080.svg);
     background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
 }
 
 
@@ -18,8 +20,8 @@
    
 
     & img {
-        width: 640px;
-        height: 480px;
+        width: 740px;
+        height: 580px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
