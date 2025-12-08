@@ -7,7 +7,8 @@ const Home = () => {
     return (
       <section>
         <FrontpageComp />
-      </section>
+        
+    </section>
     );
 }
 
