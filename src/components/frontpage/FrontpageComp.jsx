@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const FrontpageComp = () => {
 
     const [showModal, setShowModal] = useState(false);
+    const [selectedFilter, setSelectedFilter] = useState(null);
 
     return (
       <section className={styles.container}>
@@ -16,14 +17,14 @@ const FrontpageComp = () => {
         <div className={styles.content}>
           <div className={styles.filters}>
             <h3>Vælg din julemagi</h3>
-            <FilterComponent />
+            <FilterComponent
+              onSelectFilter={setSelectedFilter}
+              selectedFilter={selectedFilter}
+            />
           </div>
 
           <div className={styles.camera}>
-            <WebcamComponent>
-              {(setSelectedFilter) => (
-                <FilterComponent onSelectFilter={setSelectedFilter} />
-              )}
+            <WebcamComponent selectedFilter={selectedFilter}>
             </WebcamComponent>
           </div>
 
