@@ -8,12 +8,7 @@ const Home = () => {
       <section>
         <FrontpageComp />
         
-          <Link to="/gallery">Se nissernes billedbog</Link> <br />
-          
-          <Link to="/slideshow">Slideshow</Link>
-         
-
-      </section>
+    </section>
     );
 }
 
