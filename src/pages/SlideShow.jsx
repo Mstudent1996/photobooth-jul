@@ -1,10 +1,15 @@
+import Slideshow from "../components/slideshow/slideShow";
+import Styles from "../components/slideshow/slideShow.module.css";
+import Likecomponent from "../components/likeComponent/likeComponent";
 
-const SlideShow = () => {
+const Home = () => {
+
     return (
-      <section>
-        <p>Slideshow</p>
+      <section className={Styles.slideshowContainer}>
+        <Slideshow />
+        <Likecomponent />
       </section>
     );
 }
 
-export default SlideShow
+export default Home
