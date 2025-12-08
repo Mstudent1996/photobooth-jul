@@ -1,56 +1,67 @@
-import styles from './login.module.css'
+import { useNavigate } from "react-router-dom";
+import styles from "./login.module.css";
 
-const LoginModal = ({show, onClose}) => {
+const dummyAdmin = {
+  email: "admin@admin.com",
+  password: "1234",
+  role: "admin",
+};
 
-        const handleLogin = (e) => {
-            e.preventDefault()
+const LoginModal = ({ show, onClose }) => {
+  const navigate = useNavigate();
 
-            const email = e.target.email.value
-            const password = e.target.password.value
-            console.log("Email:", email, "Password:", password);
-            onclose()
-        }
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-        if(!show) return null
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-    return (
-      <section className={styles.container}>
-        <h1 className={styles.title}>Julemandens Værksted</h1>
+    if (email === dummyAdmin.email && password === dummyAdmin.password) {
+      localStorage.setItem("role", dummyAdmin.role);
+      navigate("/admin");
 
-        <button className={styles.closeBtn} type="button" onClick={onClose}>
-          &times;
+      if (onClose) onClose();
+    } else {
+      alert("Forkert login");
+    }
+  };
+  if (!show) return null;
+
+  return (
+    <section className={styles.container}>
+      <h1 className={styles.title}>Julemandens Værksted</h1>
+
+      <button className={styles.closeBtn} type="button" onClick={onClose}>
+        &times;
+      </button>
+
+      <form onSubmit={handleLogin}>
+        <div className="mb-3">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn-success w-100">
+          Login
         </button>
+      </form>
+    </section>
+  );
+};
 
-        <form onSubmit={handleLogin}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label"></label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label"></label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-success w-100">
-            Login
-          </button>
-        </form>
-
-      </section>
-    );
-}
-
-export default LoginModal
+export default LoginModal;
