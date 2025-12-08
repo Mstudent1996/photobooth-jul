@@ -14,9 +14,24 @@
 }
 
 .slideItem img {
-  width: 200px;
+  width: 250px;
   height: auto;
   display: block;
   border-radius: 8px;
   margin: 20px;
 }
+
+.likes {
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.likes img {
+    width: 20px;  
+    height: 20px;
+}
+
