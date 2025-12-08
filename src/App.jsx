@@ -1,4 +1,4 @@
-import "./App.css";
+/* import style from "./App.module.css"; */
 import LoginModal from "./components/login/Login";
 import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
 import Gallery from "./pages/gallery/gallery";
@@ -15,7 +15,6 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/slideshow" element={<SlideShow />} />
       </Routes>
-      <Link to="/gallery">Se nissernes billedbog</Link>
     </BrowserRouter>
   );
 }
