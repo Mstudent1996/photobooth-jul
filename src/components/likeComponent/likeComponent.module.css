@@ -1,0 +1,22 @@
+.slideshowTop3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.slideshowTop3 h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.slideItem img {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 20px;
+}

@@ -15,7 +15,6 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/slideshow" element={<SlideShow />} />
       </Routes>
-      <Link to="/gallery">Se nissernes billedbog</Link>
     </BrowserRouter>
   );
 }
