@@ -1,5 +1,18 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
 .container {
-position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -12,15 +25,14 @@ position: relative;
 }
 
 .closeBtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #fdffff; 
-    line-height: 1;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fdffff; 
+  cursor: pointer;
 }
 
 /* .customBtn {
