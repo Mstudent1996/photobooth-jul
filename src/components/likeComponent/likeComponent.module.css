@@ -15,8 +15,6 @@
 
 .slideItem img {
   width: 250px;
-  height: auto;
-  display: block;
   border-radius: 8px;
   margin: 20px;
 }
@@ -25,13 +23,20 @@
     padding: 5px 10px;
     border-radius: 20px;
     display: flex;
+    position: absolute;
     align-items: center;
     color: white;
     font-weight: bold;
+    margin-top: -35px;
+    
 }
 
 .likes img {
     width: 20px;  
     height: 20px;
+}
+
+.imageWrapper {
+  margin-bottom: 5px;
 }
 
