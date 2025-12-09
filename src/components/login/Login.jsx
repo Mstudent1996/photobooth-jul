@@ -28,39 +28,41 @@ const LoginModal = ({ show, onClose }) => {
   if (!show) return null;
 
   return (
-    <section className={styles.container}>
-      <h1 className={styles.title}>Julemandens Værksted</h1>
+    <div className={styles.overlay}>
+      <section className={styles.container}>
+        <h1>Julemandens Værksted</h1>
 
-      <button className={styles.closeBtn} type="button" onClick={onClose}>
-        &times;
-      </button>
-
-      <form onSubmit={handleLogin}>
-        <div className="mb-3">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-
-        <button type="submit" className="btn btn-success w-100">
-          Login
+        <button className={styles.closeBtn} type="button" onClick={onClose}>
+          &times;
         </button>
-      </form>
-    </section>
+
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-success w-100">
+            Login
+          </button>
+        </form>
+      </section>
+    </div>
   );
 };
 
