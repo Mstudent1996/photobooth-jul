@@ -38,7 +38,7 @@ const FrontpageComp = () => {
         </div>
 
         <div className={styles.buttons}>
-            
+
           <Link to="/gallery">
             <button className={styles.button}>Se nissernes billedbog</button>
           </Link>
@@ -48,7 +48,7 @@ const FrontpageComp = () => {
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
         </div>
-              </div>
+      </div>
       </section>
     );
 }
