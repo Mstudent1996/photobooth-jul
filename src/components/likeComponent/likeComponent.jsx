@@ -33,14 +33,19 @@ export default function Top3Slideshow() {
             <div className={Styles.slideWrap}>
                 {slides.map((s, i) => (
                     <div key={s.id ?? i} className={Styles.slideItem}>
-                        
+
                         <div className={Styles.imageWrapper}>
                             <img src={s.url} className={Styles.slideImage} />
+
+                            <div className={Styles.likes}>
+                                <img src={LikeHeart} /> {s.likes || 0}
+                            </div>        
+                                            
                         </div>
 
-                        <div className={Styles.likes}>
+                        {/* <div className={Styles.likes}>
                             <img src={LikeHeart} /> {s.likes || 0}
-                        </div>
+                        </div> */}
                     </div>
 
                 ))}

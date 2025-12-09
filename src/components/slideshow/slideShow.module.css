@@ -3,7 +3,7 @@
 .slideshowContainer {
     background-color: #901b22;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.6fr 1fr;
     background-image: url(../../../src/assets/grafisk/snowBackground_1920x1080.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -32,5 +32,48 @@
         margin-bottom: 20px;
         font-size: 3rem;
         padding-block: 20px;
+        background-color: #901b22;
     }
+}
+.gingerbread {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+}
+.reindeer {
+    position: absolute;
+    top: 20px;
+    left: 140px;
+    width: 100px;
+    height: auto;
+}
+.tree {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    height: auto;
+}
+.bell {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    width: 130px;
+    height: auto;
+}
+.gift {
+    position: absolute;
+    bottom: 20px;
+    right: 500px;
+    width: 100px;
+    height: auto;
+}
+.stocking {
+    position: absolute;
+    bottom: 20px;
+    right: 620px;
+    width: 100px;
+    height: auto;
 }
