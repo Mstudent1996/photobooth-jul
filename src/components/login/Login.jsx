@@ -30,11 +30,10 @@ const LoginModal = ({ show, onClose }) => {
   return (
     <div className={styles.overlay}>
       <section className={styles.container}>
-        <h1>Julemandens Værksted</h1>
-
         <button className={styles.closeBtn} type="button" onClick={onClose}>
           &times;
         </button>
+        <h1>Julemandens Værksted</h1>
 
         <form onSubmit={handleLogin}>
           <div className="mb-3">
