@@ -1,8 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .webcam {
@@ -15,6 +15,18 @@
   height: 80px;
   width: 80px;
   background-color: #c70049;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+
+
+  & img {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 
@@ -30,4 +42,3 @@
   height: 480px;
   pointer-events: none;
 }
-

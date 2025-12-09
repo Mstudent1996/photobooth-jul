@@ -4,6 +4,7 @@ import style from "../webcam/webcam.module.css";
 import modal from "../webcam/modal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import gingerbread from "../../assets/grafisk/gingerbread.gif";
 
 // godkend foto efter upload
 async function approvePhoto(photoId) {
@@ -172,7 +173,7 @@ export default function WebcamComponent({ selectedFilter }) {
           />
 
           <button className={style.button} onClick={capture}>
-            Take Picture
+            <img src={gingerbread} />
           </button>
         </div>
 
