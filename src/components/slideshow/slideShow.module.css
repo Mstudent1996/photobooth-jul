@@ -8,6 +8,8 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% auto;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 
@@ -37,22 +39,39 @@
 }
 .gingerbread {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;
+    right: 700px;
     width: 100px;
     height: auto;
+    rotate: -20deg;
 }
 .reindeer {
     position: absolute;
     top: 20px;
-    left: 140px;
-    width: 100px;
+    left: 55px;
+    width: 130px;
     height: auto;
+    rotate: -20deg;
+}
+.reindeer2 {
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    width: 230px;
+    height: auto;
+    transform: scaleX(-1);
 }
 .tree {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    width: 250px;
+    height: auto;
+}
+.tree2 {
+    position: absolute;
+    bottom: 20px;
+    right: 700px;
     width: 250px;
     height: auto;
 }
@@ -65,15 +84,8 @@
 }
 .gift {
     position: absolute;
-    bottom: 20px;
-    right: 500px;
-    width: 100px;
-    height: auto;
-}
-.stocking {
-    position: absolute;
-    bottom: 20px;
-    right: 620px;
+    bottom: 60px;
+    left: 160px;
     width: 100px;
     height: auto;
 }

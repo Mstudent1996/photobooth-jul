@@ -41,6 +41,7 @@ const FrontpageComp = () => {
         </div>
 
         <div className={styles.buttons}>
+
           <Link to="/gallery">
             <button className={styles.button}>Se nissernes billedbog</button>
           </Link>
@@ -50,15 +51,9 @@ const FrontpageComp = () => {
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
         </div>
-        <div>
-          <img className={styles.reindeer} src={reindeer} />
-          <img className={styles.tree} src={tree} />
-          <img className={styles.bell} src={bell} />
-          <img className={styles.gift} src={gift} />
-        </div>
       </div>
-    </section>
-  );
-};
+      </section>
+    );
+}
 
 export default FrontpageComp;

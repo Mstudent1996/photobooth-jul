@@ -5,7 +5,7 @@ import reindeer from "../../assets/grafisk/reindeer.gif";
 import tree from "../../assets/grafisk/tree.gif";
 import bell from "../../assets/grafisk/bell.gif";
 import gift from "../../assets/grafisk/gift.gif";
-import stocking from "../../assets/grafisk/stocking.gif";
+import reindeer2 from "../../assets/img2.png";
 
 export default function Slideshow() {
   const [slides, setSlides] = useState([]);
@@ -53,12 +53,13 @@ export default function Slideshow() {
           <img src={src}/>
         </div>
 
-{/*         <img className={Styles.gingerbread} src={gingerbread} />
- */}        <img className={Styles.reindeer} src={reindeer} />
+        <img className={Styles.gingerbread} src={gingerbread} />
+        <img className={Styles.reindeer} src={reindeer} />
         <img className={Styles.tree} src={tree} />
+        <img className={Styles.tree2} src={tree} />
         <img className={Styles.bell} src={bell} />
-       {/*  <img className={Styles.gift} src={gift} />  
-        <img className={Styles.stocking} src={stocking} /> */}
+        <img className={Styles.gift} src={gift} />  
+        <img className={Styles.reindeer2} src={reindeer2} />  
     </div>
   );
 }
