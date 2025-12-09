@@ -1,8 +1,18 @@
 .container {
-    padding: 50px;
     background-color: var(--dark-red);
     text-align: center;
     color: var(--white);
+}
+
+.backgroundOverlay {
+    background-image: url(../../../src/assets/grafisk/snowBackground_1920x1080.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100vw auto;
+}
+
+h1 {
+    padding: 30px;
 }
 
 .content {

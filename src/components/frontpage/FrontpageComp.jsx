@@ -12,6 +12,7 @@ const FrontpageComp = () => {
 
     return (
       <section className={styles.container}>
+        <div className={styles.backgroundOverlay}>
         <h1>Skab Julemagien</h1>
 
         <div className={styles.content}>
@@ -47,6 +48,7 @@ const FrontpageComp = () => {
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
         </div>
+              </div>
       </section>
     );
 }
