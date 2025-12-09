@@ -58,7 +58,7 @@ export default function AdminPanel() {
     }
     try {
       const response = await fetch(
-        `https://photobooth-lx7n9.ondigitalocean.app/photos/${imageId}`,
+        `https://photobooth-lx7n9.ondigitalocean.app//photo/${imageId}`,
         {
           method: "DELETE",
         }

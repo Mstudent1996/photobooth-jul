@@ -37,7 +37,7 @@ const FrontpageComp = () => {
         </div>
 
         <div className={styles.btns}>
-            
+
           <Link to="/gallery">
             <button className={styles.button}>Se nissernes billedbog</button>
           </Link>
