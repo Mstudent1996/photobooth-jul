@@ -1,18 +1,22 @@
-import { useState } from 'react';
-import FilterComponent from '../filter/filter';
-import LoginModal from '../login/Login';
-import WebcamComponent from '../webcam/webcam';
-import styles from './frontpageComp.module.css'
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import FilterComponent from "../filter/filter";
+import LoginModal from "../login/Login";
+import WebcamComponent from "../webcam/webcam";
+import styles from "./frontpageComp.module.css";
+import { Link } from "react-router-dom";
+
+import reindeer from "../../assets/grafisk/reindeer.gif";
+import tree from "../../assets/grafisk/tree.gif";
+import bell from "../../assets/grafisk/bell.gif";
+import gift from "../../assets/grafisk/gift.gif";
 
 const FrontpageComp = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState(null);
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectedFilter, setSelectedFilter] = useState(null);
-
-    return (
-      <section className={styles.container}>
-        <div className={styles.backgroundOverlay}>
+  return (
+    <section className={styles.container}>
+      <div className={styles.backgroundOverlay}>
         <h1>Skab Julemagien</h1>
 
         <div className={styles.content}>
@@ -25,8 +29,7 @@ const FrontpageComp = () => {
           </div>
 
           <div className={styles.camera}>
-            <WebcamComponent selectedFilter={selectedFilter}>
-            </WebcamComponent>
+            <WebcamComponent selectedFilter={selectedFilter}></WebcamComponent>
           </div>
 
           <div className={styles.top3}>
@@ -53,4 +56,4 @@ const FrontpageComp = () => {
     );
 }
 
-export default FrontpageComp
+export default FrontpageComp;
