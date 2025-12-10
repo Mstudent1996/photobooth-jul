@@ -4,7 +4,7 @@ import LoginModal from "../login/Login";
 import WebcamComponent from "../webcam/webcam";
 import styles from "./frontpageComp.module.css";
 import { Link } from "react-router-dom";
-import Likecomponent from "../likeComponent/likeComponent.jsx"
+import Likecomponent from "../likeComponent/likeComponent.jsx";
 
 import reindeer from "../../assets/grafisk/reindeer.gif";
 import tree from "../../assets/grafisk/tree.gif";
@@ -22,7 +22,6 @@ const FrontpageComp = () => {
         <h1>Skab Julemagien</h1>
 
         <div className={styles.content}>
-          
           <div className={styles.filters}>
             <h3>Vælg din julemagi</h3>
             <FilterComponent
@@ -36,16 +35,11 @@ const FrontpageComp = () => {
           </div>
 
           <div className={styles.top3}>
-            
-            <Top3Slideshow variant="frontpage">
-              
-          </Top3Slideshow>
-          
+            <Top3Slideshow variant="frontpage"></Top3Slideshow>
           </div>
         </div>
 
         <div className={styles.buttons}>
-
           <Link to="/gallery">
             <button className={styles.button}>Se nissernes billedbog</button>
           </Link>
@@ -55,9 +49,16 @@ const FrontpageComp = () => {
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
         </div>
+
+        <div>
+          <img className={styles.reindeer} src={reindeer} />
+          <img className={styles.tree} src={tree} />
+          <img className={styles.bell} src={bell} />
+          <img className={styles.gift} src={gift} />
+        </div>
       </div>
-      </section>
-    );
-}
+    </section>
+  );
+};
 
 export default FrontpageComp;
