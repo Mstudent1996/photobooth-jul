@@ -1,71 +1,86 @@
-/* Container */
-:global(.gallery) {
-  background: linear-gradient(to bottom, #1e4d2b 0%, #1e4d2b 78%, #ffffff 78%);
+.page {
+  position: relative; /* så absolute elementer kan placeres */
   min-height: 100vh;
-  padding: 2rem;
-  position: relative;
-  background-color: #778b3b;
-
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 1rem;
-  max-width: 100vw;
-  margin: 0 auto;
-
-  /* Snefnug baggrund */
+  background: #1e4d2b;
+  margin: 0;
+  min-height: 100vh;
+  background: #1e4d2b;
   background-image:
-    radial-gradient(#ffffff 1.2px, transparent 1.2px),
-    radial-gradient(#ffffff 1.2px, transparent 1.2px);
-  background-position: 0 0, 20px 20px;
-  background-size: 40px 40px;
+    url("/assets/snowflakes.png"),
+    url("src/assets/grafisk/snowBackground_1920x1080.svg");
+  background-repeat: repeat, no-repeat;
+  background-position: center top, center bottom;
+  background-size: 40px 40px, 100% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
 }
 
-/* Kort */
-:global(.gallery > div) {
-  background: #eee;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
-  overflow: hidden;
+.title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 160px);
+  grid-template-rows: repeat(4, 160px);
+  gap: 1rem;
+  position: relative;
+}
+
+/* Kort med billede */
+.card {
   position: relative;
   width: 160px;
   height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-:global(.gallery > div:hover) {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.45);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
-/* Billeder og GIFs */
-:global(.gallery img),
-:global(.gallery video) {
-  width: 160px;
-  height: 160px;
+.image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 12px;
 }
 
-/* Likes badge */
-:global(.gallery > div)::after {
-  content: attr(data-likes);
+/* Like-knap og tæller */
+.likeButton {
   position: absolute;
-  bottom: 8px;
-  right: 10px;
-  background: rgba(255,255,255,0.95);
-  color: #222;
-  font-size: 0.85rem;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.likeButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.likeCount {
+  position: absolute;
+  top: 6px;
+  right: 30px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
 /* Tilbage label */
-:global(.backLabel) {
+.backLabel {
   grid-column: 1 / span 2;
   grid-row: 1;
   align-self: start;
@@ -76,51 +91,49 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
-/* Pile */
-:global(.arrowUp),
-:global(.arrowDown) {
-  grid-column: 5;
-  justify-self: end;
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+/* Container til pilene */
+.sideArrows {
+  position: absolute;   /* fast på siden */
+  top: 50%;             /* centreret lodret */
+  right: 20px;          /* ude i højre side */
+  transform: translateY(-50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 3;           /* over galleriet */
+}
+
+.arrowUp,
+.arrowDown {
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
-:global(.arrowUp) { grid-row: 2; }
-:global(.arrowDown) { grid-row: 3; }
 
-/* GIF-dekorationer */
-:global(.gingerbread),
-:global(.stocking),
-:global(.bell) {
+.gingerbread,
+.stocking,
+.bell {
+  position: absolute;
   width: 80px;
   height: 80px;
   object-fit: contain;
+  z-index: 2;
 }
 
-:global(.gingerbread) {
-  grid-column: 1;
-  grid-row: 4;
-  justify-self: start;
-  align-self: end;
+/* Nederst venstre */
+.gingerbread {
+  bottom: 40px;
+  left: 60px;
 }
 
-:global(.stocking) {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: start;
-  align-self: start;
+/* Øverst venstre */
+.stocking {
+  top: 60px;
+  left: 40px;
 }
 
-:global(.bell) {
-  grid-column: 5;
-  grid-row: 1;
-  justify-self: end;
-  align-self: start;
+/* Øverst højre */
+.bell {
+  top: 50px;
+  right: 70px;
 }
