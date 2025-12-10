@@ -41,8 +41,15 @@ const LoginModal = ({ show, onClose }) => {
               type="email"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder="Julemandens email"
               required
+              style={{
+                width: "340px",
+                height: "35px",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "none",
+              }}
             />
           </div>
 
@@ -51,8 +58,15 @@ const LoginModal = ({ show, onClose }) => {
               type="password"
               id="password"
               name="password"
-              placeholder="Password"
+              placeholder="Julemandens kodeord"
               required
+              style={{
+                width: "340px",
+                height: "35px",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "none",
+              }}
             />
           </div>
 
