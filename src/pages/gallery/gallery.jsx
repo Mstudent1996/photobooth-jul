@@ -6,6 +6,7 @@ export default function Gallery() {
   const [currentPage, setCurrentPage] = useState(0);
   const photosPerPage = 20;
 
+  /* for at få galleri fikset skal det hentes fra vores eget slug */
   useEffect(() => {
     async function fetchData() {
       try {
