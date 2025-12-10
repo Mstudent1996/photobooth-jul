@@ -1,11 +1,16 @@
+/* defaultVariant er styling for slideshow */
+/* frontpageVariant er styling for forsiden */
 
 .defaultVariant.slideshowTop3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 16px;
   min-height: 100vh;
   padding: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 .defaultVariant.slideshowTop3 h1 {
@@ -14,10 +19,17 @@
   text-align: center;
 }
 
+.defaultVariant .slideItem{
+  border: solid 3px var(--white);
+  background-color: var(--white);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
 .defaultVariant .slideItem img {
   width: 250px;
   border-radius: 8px;
-  margin: 20px;
+  margin-bottom: 6px;
 }
 
 .defaultVariant.likes {
@@ -55,6 +67,7 @@
   min-height: 100vh;
   color: black;
 }
+
 .frontpageVariant .slideItem{
   border: solid 3px var(--white);
   background-color: var(--white);
@@ -65,8 +78,6 @@
 .frontpageVariant .slideItem img {
   width: 150px;
   border-radius: 8px;
-  
-  
 }
 
 .frontpageVariant.likes{
