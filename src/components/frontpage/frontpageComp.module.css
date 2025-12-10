@@ -7,12 +7,13 @@
 .backgroundOverlay {
   background-image: url(../../../src/assets/grafisk/snowBackground_1920x1080.svg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center bottom;
   background-size: 100vw auto;
   height: 100vh;
 }
 
-h1, h3 {
+h1,
+h3 {
   padding: 30px 0 10px;
 }
 
@@ -67,7 +68,7 @@ h1, h3 {
 .reindeer {
   position: absolute;
   top: 20px;
-  left: 140px;
+  left: 160px;
   width: 100px;
   height: auto;
 }
