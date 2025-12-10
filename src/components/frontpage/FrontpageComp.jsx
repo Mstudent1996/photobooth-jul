@@ -4,11 +4,13 @@ import LoginModal from "../login/Login";
 import WebcamComponent from "../webcam/webcam";
 import styles from "./frontpageComp.module.css";
 import { Link } from "react-router-dom";
+import Likecomponent from "../likeComponent/likeComponent.jsx"
 
 import reindeer from "../../assets/grafisk/reindeer.gif";
 import tree from "../../assets/grafisk/tree.gif";
 import bell from "../../assets/grafisk/bell.gif";
 import gift from "../../assets/grafisk/gift.gif";
+import Top3Slideshow from "../likeComponent/likeComponent";
 
 const FrontpageComp = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +22,7 @@ const FrontpageComp = () => {
         <h1>Skab Julemagien</h1>
 
         <div className={styles.content}>
+          
           <div className={styles.filters}>
             <h3>Vælg din julemagi</h3>
             <FilterComponent
@@ -33,10 +36,11 @@ const FrontpageComp = () => {
           </div>
 
           <div className={styles.top3}>
-            <h3>Top 3</h3>
-            <div className={styles.imgTop}>Placeholder for top 1</div>
-            <div className={styles.imgTop}>Placeholder for top 2</div>
-            <div className={styles.imgTop}>Placeholder for top 3</div>
+            
+            <Top3Slideshow variant="frontpage">
+              
+          </Top3Slideshow>
+          
           </div>
         </div>
 
