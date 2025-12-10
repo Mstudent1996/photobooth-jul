@@ -3,6 +3,8 @@ import styles from "./gallery.module.css";
 
 export default function Gallery() {
   const [photos, setPhotos] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const photosPerPage = 20;
 
   useEffect(() => {
     async function fetchData() {
@@ -29,9 +31,21 @@ export default function Gallery() {
     );
   }
 
+  const startIndex = currentPage * photosPerPage;
+  const endIndex = startIndex + photosPerPage;
+  const visiblePhotos = photos.slice(startIndex, endIndex);
+
   return (
     <div className={styles.page}>
       <h1>Nissernes Billedbog</h1>
+
+      {/* Tilbage-knap frit placeret */}
+      <button
+        className={styles.backButton}
+        onClick={() => window.history.back()}
+      >
+        Tilbage
+      </button>
 
       <img
         className={styles.gingerbread}
@@ -43,12 +57,14 @@ export default function Gallery() {
         src="src/assets/grafisk/stocking.gif"
         alt="Stocking"
       />
-      <img className={styles.bell} src="src/assets/grafisk/bell.gif" alt="Bell" />
+      <img
+        className={styles.bell}
+        src="src/assets/grafisk/bell.gif"
+        alt="Bell"
+      />
 
       <div className={styles.gallery}>
-        <div className={styles.backLabel}>Tilbage</div>
-
-        {photos.map((photo) => (
+        {visiblePhotos.map((photo) => (
           <div key={photo._id} className={styles.card}>
             <img
               className={styles.image}
@@ -60,19 +76,34 @@ export default function Gallery() {
               className={styles.likeButton}
               onClick={() => handleLike(photo._id)}
             >
-              <img src="/assets/heart.png" alt="Like" />
+              <img src="src/assets/grafisk/likeHeartIcon.svg" alt="Like" />
             </button>
 
             <span className={styles.likeCount}>{photo.likes || 0}</span>
           </div>
-
-          
         ))}
       </div>
-          <div className={styles.arrows}>
-              <img className={styles.arrowUp} src="src/assets/grafisk/arrowUp.svg" alt="Pil op" />
-              <img className={styles.arrowDown} src="src/assets/grafisk/arrowDown.svg" alt="Pil ned" />
-          </div>
+      <div className={styles.sideArrows}>
+        <img
+          className={styles.arrowUp}
+          src="src/assets/grafisk/arrowUp.svg"
+          alt="Pil op"
+          onClick={() => setCurrentPage((p) => Math.max(p - 1, 0))}
+        />
+        <img
+          className={styles.arrowDown}
+          src="src/assets/grafisk/arrowDown.svg"
+          alt="Pil ned"
+          onClick={() =>
+            setCurrentPage((p) =>
+              (p + 1) * photosPerPage < photos.length ? p + 1 : p
+            )
+          }
+        />
+        <div className={styles.pageIndicator}>
+          Side {currentPage + 1} af {Math.ceil(photos.length / photosPerPage)}
+        </div>
+      </div>
     </div>
   );
 }

@@ -10,26 +10,30 @@
     url("src/assets/grafisk/snowBackground_1920x1080.svg");
   background-repeat: repeat, no-repeat;
   background-position: center top, center bottom;
-  background-size: 40px 40px, 100% auto;
+  background-size: 40px 40px, cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 6rem;
+  padding-top: 1rem;
 }
 
 .title {
   color: #fff;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 213px);
+  grid-template-columns: repeat(5, 160px);
   grid-template-rows: repeat(4, 160px);
-  gap: 1rem;
+  gap: 4rem;
   position: relative;
+  z-index: 1;
+  margin-top: 2rem;   /* lidt luft under titlen */
+  padding-bottom: 8rem;
 }
 
 /* Kort med billede */
@@ -93,7 +97,7 @@
 
 /* Container til pilene */
 .sideArrows {
-  position: absolute;   /* fast på siden */
+  position: fixed;   /* fast på siden */
   top: 50%;             /* centreret lodret */
   right: 20px;          /* ude i højre side */
   transform: translateY(-50%);
@@ -136,4 +140,32 @@
 .bell {
   top: 50px;
   right: 70px;
+}
+
+.backButton {
+  position: absolute;       /* fri placering */
+  top: 20px;                /* højere oppe på siden */
+  left: 20px;               /* lidt ind fra venstre */
+  width: 100px;
+  background: #fff;
+  color: #1e4d2b;
+  font-weight: bold;
+  font-size: 0.85rem;       /* mindre tekst */
+  padding: 0.3rem 0.6rem;   /* mindre knap */
+  border: 2px solid #1e4d2b;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.backButton:hover {
+  background: #1e4d2b;
+  color: #fff;
+}
+
+.pageIndicator {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 0.9rem;
 }
