@@ -53,6 +53,7 @@
   align-items: center;
   gap: 10px;
   min-height: 100vh;
+  color: black;
 }
 .frontpageVariant .slideItem{
   border: solid 3px var(--white);

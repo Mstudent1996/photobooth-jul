@@ -66,12 +66,14 @@ export default function Gallery() {
       <div className={styles.gallery}>
         {visiblePhotos.map((photo) => (
           <div key={photo._id} className={styles.card}>
+            {/* Billedet */}
             <img
               className={styles.image}
               src={photo.thumbUrl || photo.url}
               alt={photo.originalFilename || "Billede fra nissernes billedbog"}
             />
 
+            {/* Like-knap */}
             <button
               className={styles.likeButton}
               onClick={() => handleLike(photo._id)}
@@ -79,7 +81,10 @@ export default function Gallery() {
               <img src="src/assets/grafisk/likeHeartIcon.svg" alt="Like" />
             </button>
 
-            <span className={styles.likeCount}>{photo.likes || 0}</span>
+            {/* Likes-bar under billedet */}
+            <div className={styles.likeBar}>
+              <span className={styles.likeText}>{photo.likes || 0} ❤️</span>
+            </div>
           </div>
         ))}
       </div>

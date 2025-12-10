@@ -33,7 +33,7 @@
   position: relative;
   z-index: 1;
   margin-top: 2rem;   /* lidt luft under titlen */
-  padding-bottom: 8rem;
+  padding-bottom: 10rem;
 }
 
 /* Kort med billede */
@@ -45,13 +45,15 @@
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
 }
 
 /* Like-knap og tæller */
@@ -169,3 +171,21 @@
   color: #fff;
   font-size: 0.9rem;
 }
+
+.likeBar {
+  height: 24px;              /* højden på baren */
+  width: 100%;
+  background: #fff;          /* fast hvid bar */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  border-radius: 0 0 12px 12px; /* afrunding i bunden */
+}
+
+.likeText {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #1e4d2b;
+}
+
