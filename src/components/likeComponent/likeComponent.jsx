@@ -3,7 +3,7 @@ import Styles from "./likeComponent.module.css";
 import LikeHeart from "../../assets/grafisk/likeHeartIcon.svg";
 
 
-export default function Top3Slideshow() {
+export default function Top3Slideshow({variant = "default"}) {
     const [slides, setSlides] = useState([]);
 
     useEffect(() => {
@@ -27,8 +27,13 @@ export default function Top3Slideshow() {
 
     if (slides.length === 0) return <p>Henter billeder...</p>;
 
+    const variantClasses = {
+        default: Styles.defaultVariant,
+        frontpage: Styles.frontpageVariant
+    }
+console.log("Variant:", variant, "Classes:", variantClasses[variant]);
     return (
-        <div className={Styles.slideshowTop3}>
+        <div className={`${Styles.slideshowTop3} ${variantClasses[variant]}`}>
             <h1>Vores top 3</h1>
             <div className={Styles.slideWrap}>
                 {slides.map((s, i) => (
