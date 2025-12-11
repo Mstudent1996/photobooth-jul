@@ -5,8 +5,7 @@
   margin: 0;
   min-height: 100vh;
   background: #1e4d2b;
-  background-image:
-    url("/assets/snowflakes.png"),
+  background-image: url("/assets/snowflakes.png"),
     url("src/assets/grafisk/snowBackground_1920x1080.svg");
   background-repeat: repeat, no-repeat;
   background-position: center top, center bottom;
@@ -22,7 +21,7 @@
   color: #fff;
   font-size: 2rem;
   margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .gallery {
@@ -32,7 +31,7 @@
   gap: 4rem;
   position: relative;
   z-index: 1;
-  margin-top: 2rem;   /* lidt luft under titlen */
+  margin-top: 2rem; /* lidt luft under titlen */
   padding-bottom: 10rem;
 }
 
@@ -44,7 +43,7 @@
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
 }
@@ -82,7 +81,7 @@
   font-size: 0.75rem;
   font-weight: bold;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 /* Tilbage label */
@@ -94,19 +93,19 @@
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Container til pilene */
 .sideArrows {
-  position: fixed;   /* fast på siden */
-  top: 50%;             /* centreret lodret */
-  right: 20px;          /* ude i højre side */
+  position: fixed; /* fast på siden */
+  top: 50%; /* centreret lodret */
+  right: 20px; /* ude i højre side */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 3;           /* over galleriet */
+  z-index: 3; /* over galleriet */
 }
 
 .arrowUp,
@@ -145,19 +144,19 @@
 }
 
 .backButton {
-  position: absolute;       /* fri placering */
-  top: 20px;                /* højere oppe på siden */
-  left: 20px;               /* lidt ind fra venstre */
+  position: absolute; /* fri placering */
+  top: 20px; /* højere oppe på siden */
+  left: 20px; /* lidt ind fra venstre */
   width: 100px;
   background: #fff;
   color: #1e4d2b;
   font-weight: bold;
-  font-size: 0.85rem;       /* mindre tekst */
-  padding: 0.3rem 0.6rem;   /* mindre knap */
+  font-size: 0.85rem; /* mindre tekst */
+  padding: 0.3rem 0.6rem; /* mindre knap */
   border: 2px solid #1e4d2b;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -173,9 +172,9 @@
 }
 
 .likeBar {
-  height: 24px;              /* højden på baren */
+  height: 24px; /* højden på baren */
   width: 100%;
-  background: #fff;          /* fast hvid bar */
+  background: #fff; /* fast hvid bar */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -188,4 +187,3 @@
   font-weight: bold;
   color: #1e4d2b;
 }
-
