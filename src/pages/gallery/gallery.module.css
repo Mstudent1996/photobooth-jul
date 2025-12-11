@@ -3,8 +3,6 @@
   min-height: 100vh;
   background: #1e4d2b;
   margin: 0;
-  min-height: 100vh;
-  background: #1e4d2b;
   background-image: url("/assets/snowflakes.png"),
     url("src/assets/grafisk/snowBackground_1920x1080.svg");
   background-repeat: repeat, no-repeat;
@@ -13,8 +11,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
   padding-top: 1rem;
+  color: #fff;
 }
 
 .title {
