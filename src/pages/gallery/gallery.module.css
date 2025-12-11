@@ -29,7 +29,7 @@
   gap: 4rem;
   position: relative;
   z-index: 1;
-  margin-top: 2rem; /* lidt luft under titlen */
+  margin-top: 2rem;
   padding-bottom: 10rem;
 }
 
@@ -44,6 +44,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .image {
@@ -53,7 +54,13 @@
   border-radius: 12px 12px 0 0;
 }
 
-/* Like-knap og tæller */
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
 .likeButton {
   position: absolute;
   top: 6px;
@@ -72,17 +79,28 @@
   object-fit: contain;
 }
 
-.likeCount {
+.likeBar {
+  height: 24px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  border-radius: 0 0 12px 12px;
   position: absolute;
-  top: 6px;
-  right: 30px;
-  font-size: 0.75rem;
+  bottom: 0;
+  left: 0;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* Tilbage label */
+.likeText {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #1e4d2b;
+  margin-left: 4px;
+}
+
 .backLabel {
   grid-column: 1 / span 2;
   grid-row: 1;
@@ -94,16 +112,15 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Container til pilene */
 .sideArrows {
-  position: fixed; /* fast på siden */
-  top: 50%; /* centreret lodret */
-  right: 20px; /* ude i højre side */
+  position: fixed;
+  top: 50%;
+  right: 20px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 3; /* over galleriet */
+  z-index: 3;
 }
 
 .arrowUp,
@@ -123,34 +140,31 @@
   z-index: 2;
 }
 
-/* Nederst venstre */
 .gingerbread {
   bottom: 40px;
   left: 60px;
 }
 
-/* Øverst venstre */
 .stocking {
   top: 60px;
   left: 40px;
 }
 
-/* Øverst højre */
 .bell {
   top: 50px;
   right: 70px;
 }
 
 .backButton {
-  position: absolute; /* fri placering */
-  top: 20px; /* højere oppe på siden */
-  left: 20px; /* lidt ind fra venstre */
+  position: absolute;
+  top: 20px;
+  left: 20px;
   width: 100px;
   background: #fff;
   color: #1e4d2b;
   font-weight: bold;
-  font-size: 0.85rem; /* mindre tekst */
-  padding: 0.3rem 0.6rem; /* mindre knap */
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
   border: 2px solid #1e4d2b;
   border-radius: 6px;
   cursor: pointer;
@@ -167,21 +181,4 @@
   margin-top: 1rem;
   color: #fff;
   font-size: 0.9rem;
-}
-
-.likeBar {
-  height: 24px; /* højden på baren */
-  width: 100%;
-  background: #fff; /* fast hvid bar */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 8px;
-  border-radius: 0 0 12px 12px; /* afrunding i bunden */
-}
-
-.likeText {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #1e4d2b;
 }
