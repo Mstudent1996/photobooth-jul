@@ -42,8 +42,8 @@ async function uploadToApi(imageBase64) {
     const formData = new FormData();
     formData.append("file", file);
     // Brug de værdier, der passer til dit event:
-    formData.append("eventSlug", "skolefest-2025");
-    formData.append("eventId", "69314c5c548558f23cf863bb");
+    formData.append("eventSlug", "julefrokost-202");
+    formData.append("eventId", "693a81392abe4349a0887418");
 
     const res = await fetch(
       "https://photobooth-lx7n9.ondigitalocean.app/photo",
