@@ -15,7 +15,7 @@ export default function Slideshow() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://photobooth-lx7n9.ondigitalocean.app/photos?includePending=true"
+          "https://photobooth-lx7n9.ondigitalocean.app/photos?eventSlug=julefrokost-202"
         );
         const data = await response.json();
 
