@@ -35,8 +35,8 @@ h1 {
   font-size: var(--fnt1);
   color: var(--white);
 }
-/* skal ændres til at være h2 */
-h1 {
+
+h2 {
   font-size: var(--fnt2);
   color: var(--white);
 }

@@ -172,7 +172,7 @@
 .likeBar {
   height: 24px; /* højden på baren */
   width: 100%;
-  background: #fff; /* fast hvid bar */
+  background: #ffffff; /* fast hvid bar */
   display: flex;
   align-items: center;
   justify-content: flex-end;
