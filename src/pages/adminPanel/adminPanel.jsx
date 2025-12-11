@@ -39,7 +39,7 @@ export default function AdminPanel() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://photobooth-lx7n9.ondigitalocean.app/photos?eventSlug=skolefest-2025"
+        "https://photobooth-lx7n9.ondigitalocean.app/photos?eventSlug=julefrokost-202"
       );
       if (!response.ok) throw new Error("Failed to fetch images");
       const data = await response.json();

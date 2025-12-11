@@ -182,3 +182,23 @@
   color: #fff;
   font-size: 0.9rem;
 }
+<<<<<<< HEAD
+=======
+
+.likeBar {
+  height: 24px; /* højden på baren */
+  width: 100%;
+  background: #ffffff; /* fast hvid bar */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  border-radius: 0 0 12px 12px; /* afrunding i bunden */
+}
+
+.likeText {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #1e4d2b;
+}
+>>>>>>> 7071aa068ae6fd13114a0c9043a7930ce16e6e1d
