@@ -1,5 +1,5 @@
 import styles from "./filter.module.css";
-import filterImg2 from "/src/assets/img2.png";
+import filterImg2 from "/src/assets/reindeerBorder_640x480.png";
 import filterImg3 from "/src/assets/christmasOrnaments_640x480.png";
 import filterImg4 from "/src/assets/grinchBorder_640x480.png";
 
