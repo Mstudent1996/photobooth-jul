@@ -5,6 +5,8 @@ export default function Gallery() {
   const [photos, setPhotos] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const photosPerPage = 20;
+  const [disabledLikes, setDisabledLikes] = useState({});
+
 
   /* for at få galleri fikset skal det hentes fra vores eget slug */
   useEffect(() => {
@@ -24,13 +26,35 @@ export default function Gallery() {
     fetchData();
   }, []);
 
-  function handleLike(id) {
-    setPhotos((prev) =>
-      prev.map((photo) =>
-        photo._id === id ? { ...photo, likes: (photo.likes || 0) + 1 } : photo
-      )
-    );
+  async function handleLike(id) {
+    if (disabledLikes[id]) return;
+
+    setDisabledLikes((prev) => ({ ...prev, [id]: true }));
+
+    try {
+      await fetch(
+        `https://photobooth-lx7n9.ondigitalocean.app/photo/${id}/like`,
+        {
+          method: "POST",
+        }
+      );
+
+      // opdater UI
+      setPhotos((prev) =>
+        prev.map((photo) =>
+          photo._id === id ? { ...photo, likes: (photo.likes ?? 0) + 1 } : photo
+        )
+      );
+    } catch (error) {
+      console.error("Like fejlede", error);
+    }
+
+    // enable igen efter 60 sek
+    setTimeout(() => {
+      setDisabledLikes((prev) => ({ ...prev, [id]: false }));
+    }, 60_000);
   }
+
 
   const startIndex = currentPage * photosPerPage;
   const endIndex = startIndex + photosPerPage;
@@ -78,6 +102,7 @@ export default function Gallery() {
             <button
               className={styles.likeButton}
               onClick={() => handleLike(photo._id)}
+              disabled={disabledLikes[photo._id]}
             >
               <img src="src/assets/grafisk/likeHeartIcon.svg" alt="Like" />
             </button>
