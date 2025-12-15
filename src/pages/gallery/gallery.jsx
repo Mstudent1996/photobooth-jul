@@ -109,7 +109,7 @@ export default function Gallery() {
 
             {/* Likes-bar under billedet */}
             <div className={styles.likeBar}>
-              <span className={styles.likeText}>{photo.likes || 0} ❤️</span>
+              <span className={styles.likeText}>{photo.likes || 0} <img src="src/assets/grafisk/likeHeartIcon.svg" /></span>
             </div>
           </div>
         ))}
