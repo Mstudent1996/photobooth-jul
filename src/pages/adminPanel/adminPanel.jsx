@@ -16,6 +16,8 @@ export default function AdminPanel() {
     description: "",
     startsAt: "",
     endsAt: "",
+    eventSlug: "julefrokost-202",
+    storageKey: "",
     isPublic: true,
   });
 
@@ -147,6 +149,7 @@ export default function AdminPanel() {
       description: "",
       startsAt: "",
       endsAt: "",
+      eventSlug: "julefrokost-202",
       isPublic: true,
     });
     setEditingEvent(null);
@@ -195,7 +198,7 @@ export default function AdminPanel() {
                       alt={image.originalFilename || "Billede"}
                       className={styles.imageThumbnail}
                     />
-                    <p>{image.originalFilename}</p>
+                    <p>{image.storageKey}</p>
                     <button
                       className={styles.deleteButton}
                       onClick={() => deleteImage(image._id)}
