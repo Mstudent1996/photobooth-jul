@@ -20,7 +20,6 @@ const FrontpageComp = () => {
     <section className={styles.container}>
       <div className={styles.backgroundOverlay}>
         <h1>Skab Julemagien</h1>
-
         <div className={styles.content}>
           <div className={styles.filters}>
             <h3>Vælg din julemagi</h3>
@@ -31,15 +30,10 @@ const FrontpageComp = () => {
           </div>
 
           <div className={styles.camera}>
+           
             <WebcamComponent selectedFilter={selectedFilter}></WebcamComponent>
-          </div>
-
-          <div className={styles.top3}>
-            <Top3Slideshow variant="frontpage"></Top3Slideshow>
-          </div>
-        </div>
-
-        <div className={styles.buttons}>
+            
+            <div className={styles.buttons}>
           <Link to="/gallery">
             <button className={styles.button}>Se nissernes billedbog</button>
           </Link>
@@ -49,6 +43,14 @@ const FrontpageComp = () => {
           </button>
           <LoginModal show={showModal} onClose={() => setShowModal(false)} />
         </div>
+          </div>
+
+          <div className={styles.top3}>
+            <Top3Slideshow variant="frontpage"></Top3Slideshow>
+          </div>
+        </div>
+
+        
 
         <div>
           <img className={styles.reindeer} src={reindeer} />

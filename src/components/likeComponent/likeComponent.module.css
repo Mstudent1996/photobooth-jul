@@ -52,10 +52,9 @@
   margin-bottom: 5px;
 }
 
-.frontpageVariant.slideshowTop3 h1 {
+.frontpageVariant.slideshowTop3 h3 {
   color: var(--white);
   text-align: center;
-  font-size: 28px;
 }
 
 .frontpageVariant.slideshowTop3 {

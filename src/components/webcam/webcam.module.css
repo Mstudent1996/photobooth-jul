@@ -14,14 +14,14 @@
   border-radius: 100%;
   height: 80px;
   width: 80px;
-  background-color: #c70049;
+  background-color: #c70039;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
 
 
   & img {
@@ -35,6 +35,7 @@
   position: relative;
   width: 640px;
   height: 480px;
+  padding-top: 68px;
 }
 
 .overlay {

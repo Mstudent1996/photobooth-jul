@@ -34,7 +34,7 @@ export default function Top3Slideshow({variant = "default"}) {
 console.log("Variant:", variant, "Classes:", variantClasses[variant]);
     return (
         <div className={`${Styles.slideshowTop3} ${variantClasses[variant]}`}>
-            <h1>Vores top 3</h1>
+            <h3>Vores top 3</h3>
             <div className={Styles.slideWrap}>
                 {slides.map((s, i) => (
                     <div key={s.id ?? i} className={Styles.slideItem}>
